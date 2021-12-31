@@ -7,6 +7,6 @@ router.get("/", (req, res) => {
   res.send("Unlock Page");
 });
 
-router.get("/instant", instant);
+router.post("/instant", instant);
 
 export default router;
