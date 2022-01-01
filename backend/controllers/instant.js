@@ -3,7 +3,7 @@ import { addSchedule } from "../testdata.js";
 import { Gpio } from "onoff";
 
 //const Gpio = require("onoff").Gpio;
-var relay = new Gpio(14, "out");
+var relay = new Gpio(18, "high");
 // import arr from "../index";
 
 export const instant = (req, res) => {
