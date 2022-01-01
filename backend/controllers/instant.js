@@ -22,7 +22,7 @@ export const instant = (req, res) => {
   //while (relay.readSync() != 0) {}
   setTimeout(() => {
     relay.writeSync(1);
+    lock = false;
   }, 3000);
   relay.writeSync(0);
-  lock = false;
 };
