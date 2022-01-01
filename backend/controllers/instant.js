@@ -22,5 +22,6 @@ export const instant = (req, res) => {
     }, 3000);
     relay.writeSync(0);
     done = true;
+    res.send("Unlocked");
   }
 };
