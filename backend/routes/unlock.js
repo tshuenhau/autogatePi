@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 
 router.post("/instant", (req, res) => {
   if (lock) {
-    res.send("Server Busy");
+    res.send(lock);
     return;
   }
   lock = true;
