@@ -25,11 +25,12 @@ router.post("/instant", (req, res) => {
   //set gpio to high/low
 
   //while (relay.readSync() != 0) {}
+  relay.writeSync(0);
+
   setTimeout(() => {
     relay.writeSync(1);
+    lock = false;
   }, 3000);
-  relay.writeSync(0);
-  lock = false;
 });
 
 export default router;
