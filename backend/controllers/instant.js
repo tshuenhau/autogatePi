@@ -4,7 +4,7 @@ import { Gpio } from "onoff";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(18, "out");
-relay.writeSync(1);
+relay.writeSync(0);
 
 // import arr from "../index";
 
@@ -17,7 +17,7 @@ export const instant = (req, res) => {
   //set gpio to high/low
 
   setTimeout(() => {
-    relay.writeSync(0);
+    relay.writeSync(1);
   }, 3000);
-  relay.writeSync(1);
+  relay.writeSync(0);
 };
