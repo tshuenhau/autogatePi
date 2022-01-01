@@ -6,7 +6,7 @@ import { Gpio } from "onoff";
 var relay = new Gpio(14, "high");
 // import arr from "../index";
 export const instant = (req, res) => {
-  req.connection.timeout(10);
+  req.connection.timeout(1000 * 10);
   res.send("Instant Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
