@@ -1,16 +1,17 @@
 import { schedule } from "../testdata.js";
 import { addSchedule } from "../testdata.js";
 import { Gpio } from "onoff";
+import { unlocked } from "../gatestatus";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
 // import arr from "../index";
 export const instant = (req, res) => {
-  if (module.parent.exports.unlocked) {
+  if (unlocked) {
     res.send("Server Busy");
     return;
   }
-  module.parent.exports.unlocked = true;
+  unlocked = true;
   res.send("Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
@@ -19,7 +20,7 @@ export const instant = (req, res) => {
 
   setTimeout(() => {
     relay.writeSync(1);
-    module.parent.exports.unlocked = false;
+    unlocked = false;
   }, 3000);
   relay.writeSync(0);
 };
