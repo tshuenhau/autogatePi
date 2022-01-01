@@ -13,10 +13,10 @@ export const instant = (req, res) => {
   }
   lock = true;
   res.send("Unlock");
-  // console.log("Unlock");
-  // console.log("Instant Unlock @ " + req.body.time);
-  //addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
-  //console.log(schedule); // this is for testing purposes for the schedule unlock later on
+  console.log("Unlock");
+  console.log("Instant Unlock @ " + req.body.time);
+  addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
+  console.log(schedule); // this is for testing purposes for the schedule unlock later on
   //set gpio to high/low
 
   //while (relay.readSync() != 0) {}
