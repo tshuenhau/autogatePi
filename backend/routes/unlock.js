@@ -1,6 +1,9 @@
 import express from "express";
 import { instant } from "../controllers/instant.js";
+import { Gpio } from "onoff";
 
+//const Gpio = require("onoff").Gpio;
+var relay = new Gpio(14, "high");
 const router = express.Router();
 let lock = false;
 
