@@ -6,8 +6,8 @@ import { Gpio } from "onoff";
 var relay = new Gpio(14, "high");
 // import arr from "../index";
 export const instant = (req, res) => {
-  req.connection.timeout(1000 * 10);
-  res.send("Instant Unlock");
+  // req.connection.timeout(1000 * 10);
+  res.send("Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
   addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
