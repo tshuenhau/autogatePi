@@ -4,6 +4,7 @@ import { Gpio } from "onoff";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
+let lock = false;
 // import arr from "../index";
 export const instant = (req, res) => {
   if (lock) {
