@@ -1,7 +1,7 @@
 import { schedule } from "../testdata.js";
 import { addSchedule } from "../testdata.js";
-//import Gpio from "onoff";
-const Gpio = require("onoff").Gpio;
+import { Gpio } from "onoff";
+//const Gpio = require("onoff").Gpio;
 var relay = new Gpio(18, "out");
 // import arr from "../index";
 
