@@ -4,25 +4,22 @@ import { Gpio } from "onoff";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
-let lock = false;
 // import arr from "../index";
 export const instant = (req, res) => {
-  if (lock) {
+  if (module.parent.exports.unlocked) {
     res.send("Server Busy");
     return;
   }
-  lock = true;
+  module.parent.exports.unlocked = true;
   res.send("Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
   addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
   console.log(schedule); // this is for testing purposes for the schedule unlock later on
-  //set gpio to high/low
 
-  //while (relay.readSync() != 0) {}
   setTimeout(() => {
     relay.writeSync(1);
-    lock = false;
+    module.parent.exports.unlocked = false;
   }, 3000);
   relay.writeSync(0);
 };
