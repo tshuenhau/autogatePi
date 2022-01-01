@@ -1,7 +1,7 @@
 import { schedule } from "../testdata.js";
 import { addSchedule } from "../testdata.js";
 import { Gpio } from "onoff";
-import { unlocked, unlock, lock } from "../gatestatus";
+import { unlocked, unlock, lock } from "../gatestatus.js";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
