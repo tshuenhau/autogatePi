@@ -4,9 +4,14 @@ import { Gpio } from "onoff";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
+let lock = false;
 // import arr from "../index";
 export const instant = (req, res) => {
-  req.connection.timeout(10);
+  if (lock) {
+    res.send("Server Busy");
+    return;
+  }
+  lock = true;
   res.send("Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
@@ -19,4 +24,5 @@ export const instant = (req, res) => {
     relay.writeSync(1);
   }, 3000);
   relay.writeSync(0);
+  lock = false;
 };
