@@ -12,10 +12,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/instant", (req, res) => {
-  if (lock) {
-    res.send(lock);
-    return;
-  }
   lock = true;
   res.send("Unlock");
   console.log("Unlock");
