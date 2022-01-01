@@ -1,8 +1,8 @@
 import { schedule } from "../testdata.js";
 import { addSchedule } from "../testdata.js";
 import { Gpio } from "onoff";
-import { unlocked } from "../gatestatus";
-
+//import { unlocked } from "../gatestatus";
+let unlocked = false;
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(14, "high");
 // import arr from "../index";
