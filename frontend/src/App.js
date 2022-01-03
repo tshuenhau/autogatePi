@@ -1,8 +1,17 @@
-import { Route, Switch } from "react-router-dom";
-import * as api from "./api";
+import { Route, Routes } from "react-router-dom";
+import Main from "./pages/Main.js";
+import { useState } from "react";
 
 function App() {
-  return <button onClick={api.instant}>Unlock</button>;
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  return (
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
