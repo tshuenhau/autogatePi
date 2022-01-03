@@ -3,12 +3,11 @@
   height: max-height;
   min-height: 100vh;
 
-  background-color: #ff3caa93;
   background-image: linear-gradient(
     225deg,
     #07455e 0%,
     #222341 50%,
-    #3a0736 100%
+    #33092f 100%
   );
 }
 .app > * {
