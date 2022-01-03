@@ -22,9 +22,9 @@
   justify-content: space-around;
   top: -30%;
   width: max-content;
-  max-width: 98vw;
+  max-width: 95vw;
   height: max-content;
-  padding: 3.5vh 2vw 3.5vh 2vw;
+  padding: 3.5vh 3vw 3.5vh 3vw;
   background: var(--glass);
   border: var(--glassborder);
   box-sizing: border-box;
