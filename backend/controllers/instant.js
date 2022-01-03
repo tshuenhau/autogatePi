@@ -4,7 +4,7 @@ import { Gpio } from "onoff";
 import { unlocked, unlock, lock } from "../static/gatestatus.js";
 
 //const Gpio = require("onoff").Gpio;
-var relay = new Gpio(16, "high");
+var relay = new Gpio(18, "high");
 // import arr from "../index";
 export const instant = (req, res) => {
   if (unlocked) {
