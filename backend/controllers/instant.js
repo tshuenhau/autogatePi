@@ -17,10 +17,10 @@ export const instant = (req, res) => {
   console.log("Instant Unlock @ " + req.body.time);
   addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
   console.log(schedule); // this is for testing purposes for the schedule unlock later on
+  relay.writeSync(0);
 
   setTimeout(() => {
     relay.writeSync(1);
     lock();
   }, 3000);
-  relay.writeSync(0);
 };
