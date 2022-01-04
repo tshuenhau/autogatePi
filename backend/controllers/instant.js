@@ -4,7 +4,7 @@ import { Gpio } from "onoff";
 import { unlocked, unlock, lock } from "../static/gatestatus.js";
 
 //const Gpio = require("onoff").Gpio;
-var relay = new Gpio(18, "high");
+var relay = new Gpio(14, "low");
 // import arr from "../index";
 export const instant = (req, res) => {
   if (unlocked) {
@@ -17,10 +17,10 @@ export const instant = (req, res) => {
   console.log("Instant Unlock @ " + req.body.time);
   addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
   console.log(schedule); // this is for testing purposes for the schedule unlock later on
-  relay.writeSync(0);
+  relay.writeSync(1);
 
   setTimeout(() => {
-    relay.writeSync(1);
+    relay.writeSync(0);
     lock();
   }, 3000);
 };
