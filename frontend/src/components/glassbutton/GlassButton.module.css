@@ -1,5 +1,6 @@
 :root {
-  --expand-duration: 0.5s;
+  --expand-duration: 0.35s;
+  --minimize-duration: 0.5s;
   --active-delay: 0.6s;
 }
 .glassbutton {
@@ -60,7 +61,7 @@
   height: 100%;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
   transform: skewX(45deg) translateX(0);
-  transition: var(--expand-duration);
+  transition: var(--minimize-duration);
 }
 
 .glassbutton:active a::before {
@@ -78,7 +79,7 @@
   height: 20%;
   background: rgb(255, 255, 255);
   border-radius: 10px;
-  transition: var(--expand-duration);
+  transition: var(--minimize-duration);
   transition-delay: 0s;
 }
 
@@ -100,7 +101,7 @@
   height: 20%;
   background: rgb(255, 255, 255);
   border-radius: 10px;
-  transition: var(--expand-duration);
+  transition: var(--minimize-duration);
   transition-delay: 0s;
 }
 
@@ -133,7 +134,7 @@
   text-emphasis: none;
   overflow: hidden;
   backdrop-filter: blur(15px);
-  transition: color 0.15s linear 0.25s, letter-spacing 0.3s linear 0.3s;
+  transition: color 0.15s linear 0.2s, letter-spacing 0.15s linear 0.15s;
 }
 .glassbuttonactive::before {
   content: "";
