@@ -16,7 +16,7 @@ function GlassButton(props) {
         setIsClicked(true);
         setTimeout(() => {
           setIsClicked(false);
-        }, 350);
+        }, 1000);
       }}
     >
       <a> {props.label}</a>

@@ -1,3 +1,6 @@
+:root {
+  --expand-duration: 0.5s;
+}
 .glassbutton {
   position: relative;
   width: 20vh;
@@ -29,7 +32,16 @@
   transition: 0.3s;
 }
 
+.glassbutton a,
+.glassbuttonactive a,
+.glassbutton,
 .glassbuttonactive {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glassbuttonactive {
+  outline: 0;
+
   position: relative;
   width: 20vh;
   height: 6vh;
@@ -45,7 +57,7 @@
   height: 100%;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
   transform: skewX(45deg) translateX(0);
-  transition: 0.5s;
+  transition: var(--expand-duration);
 }
 
 .glassbutton:active a::before {
@@ -57,19 +69,19 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -5.7px;
+  top: 93%;
   width: 30%;
   height: 20%;
   background: rgb(255, 255, 255);
   border-radius: 10px;
-  transition: 0.5s;
+  transition: var(--expand-duration);
   transition-delay: 0s;
 }
 
 .glassbutton:active::before {
-  bottom: 0;
-  height: 50%;
-  width: 90%;
+  top: 70%;
+  height: 30%;
+  width: 85%;
   border-radius: 30px;
   transition-delay: 0s;
 }
@@ -79,7 +91,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -3px;
+  top: -10%;
   width: 30%;
   height: 20%;
   background: rgb(255, 255, 255);
@@ -89,9 +101,9 @@
 }
 
 .glassbutton:active::after {
-  top: 3.5px;
+  top: 5%;
   height: 30%;
-  width: 90%;
+  width: 85%;
   border-radius: 30px;
   transition-delay: 0s;
 }
@@ -113,7 +125,7 @@
   font-size: 2.5vh;
 
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 0.5vh;
   text-emphasis: none;
   overflow: hidden;
   backdrop-filter: blur(15px);
@@ -125,7 +137,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
-  bottom: 0;
+  top: 55%;
   height: 50%;
   width: 85%;
   border-radius: 30px;
@@ -137,7 +149,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
-  top: 6px;
+  top: 5%;
   height: 50%;
   width: 85%;
   border-radius: 30px;
