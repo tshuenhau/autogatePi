@@ -31,6 +31,7 @@
   text-emphasis: none;
   overflow: hidden;
   backdrop-filter: blur(15px);
+  transition: color 0.3s linear 0.3s, letter-spacing 0.15s linear 0.25s;
 }
 
 .glassbutton a,
