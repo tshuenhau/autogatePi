@@ -1,6 +1,5 @@
 import * as api from "../api/index";
 import GlassButton from "../components/glassbutton/GlassButton.js";
-import { useState } from "react";
 import classes from "./Main.module.css";
 
 function Main() {
