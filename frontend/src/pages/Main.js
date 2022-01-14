@@ -8,11 +8,13 @@ function Main() {
     <div className={classes.main}>
       <div className={classes.center}>
         <div className={classes.column}>
+          {/*
           <div className={classes.titlepanel}>
             <div className={classes.title}>
               lasciate ogne speranza, voi ch'intrate.{" "}
             </div>
           </div>
+          */}
           <GlassButton
             label="Unlock"
             color="green"
