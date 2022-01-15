@@ -4,8 +4,11 @@ import cors from "cors";
 
 import unlock from "./routes/unlock.js";
 import login from "./routes/login.js";
+import sqlite3 from "sqlite3";
 
 const app = express();
+
+var db = new sqlite3.Database("../../database.db");
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
