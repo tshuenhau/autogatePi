@@ -20,11 +20,11 @@ router.post("/login", (req, res) => {
 
 router.get("/isLoggedIn", (req, res) => {
   db.get(sql, req.body.password, (err, result) => {
-    console.log(req.body.password);
+    console.log(req.body);
     if (err) {
       return console.error(err.message);
     }
-    return result ? res.send(true) : res.send(true);
+    return result ? res.send(true) : res.send(false);
   });
 });
 export default router;
