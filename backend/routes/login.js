@@ -6,16 +6,15 @@ var db = new sqlite3.Database("../../database.db");
 const router = express.Router();
 
 let sql = "SELECT password FROM login WHERE password = ?";
-router.get("/", (req, res) => {
-  db.get(sql, "opensesame", (err, row) => {
+router.post("/", (req, res) => {
+  db.get(sql, "opensesame", (err, result) => {
     if (err) {
       return console.error(err.message);
     }
-    return row ? console.log(row.password) : console.log("No record found");
+    return result
+      ? res.send(result)
+      : res.send({ message: "Invalid Password" });
   });
-  res.send("Login Page");
 });
-
-router.post("/login", login);
 
 export default router;
