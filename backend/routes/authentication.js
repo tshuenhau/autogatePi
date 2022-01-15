@@ -18,15 +18,13 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/isLoggedIn", (req, res) => {
+router.get("/isLoggedIn", (req, res) => {
   db.get(sql, req.body.password, (err, result) => {
     console.log(req.body.password);
     if (err) {
       return console.error(err.message);
     }
-    return result
-      ? res.send(result.password)
-      : res.send({ message: "Invalid Password" });
+    return result ? res.send(true) : res.send(false);
   });
 });
 export default router;
