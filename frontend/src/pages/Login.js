@@ -2,8 +2,11 @@ import * as api from "../api/index";
 import classes from "./Login.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [password, setPassword] = useState("");
   const [savedPassword, setSavedPassword] = useState();
   useEffect(() => {
@@ -27,6 +30,8 @@ function Login() {
   };
   // if there's a user show the message below
   if (savedPassword) {
+    navigate("/unlock");
+
     console.log(savedPassword);
 
     return <div>{savedPassword} is loggged in</div>;

@@ -1,5 +1,5 @@
 import express from "express";
-import { login } from "../controllers/login.js";
+import { login } from "../controllers/authentication.js";
 import sqlite3 from "sqlite3";
 var db = new sqlite3.Database("../../database.db");
 

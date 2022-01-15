@@ -2,6 +2,7 @@ import * as api from "../api/index";
 import GlassButton from "../components/glassbutton/GlassButton.js";
 import classes from "./Main.module.css";
 
+// send a http request to check with server if credentials are valid
 function Main() {
   return (
     <div className={classes.main}>
