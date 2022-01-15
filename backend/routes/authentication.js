@@ -20,7 +20,7 @@ router.post("/login", (req, res) => {
 
 router.get("/isLoggedIn", (req, res) => {
   db.get(sql, req.body.password, (err, result) => {
-    console.log(req);
+    console.log(req.query);
     if (err) {
       return console.error(err.message);
     }
