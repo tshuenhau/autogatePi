@@ -1,11 +1,11 @@
 let isUnlocked = false;
 
 function setUnlocked() {
-  unlocked = true;
+  isUnlocked = true;
 }
 
 function setLocked() {
-  unlocked = false;
+  isUnlocked = false;
 }
 
 export { isUnlocked, setUnlocked, setLocked };
