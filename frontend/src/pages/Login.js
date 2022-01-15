@@ -6,16 +6,21 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-
   const [password, setPassword] = useState("");
   const [savedPassword, setSavedPassword] = useState();
   useEffect(() => {
+    if (savedPassword) {
+      navigate("/");
+
+      console.log(savedPassword);
+    }
     const previouslySavedPassword = localStorage.getItem("savedPassword");
     if (previouslySavedPassword) {
       //const foundSavedPassword = JSON.parse(previouslySavedPassword);
       setSavedPassword(previouslySavedPassword);
     }
-  }, []);
+  }, [savedPassword]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // send the username and password to the server
@@ -31,14 +36,7 @@ function Login() {
     localStorage.setItem("savedPassword", response.data.toString());
     console.log(response.data.toString());
   };
-  // if there's a user show the message below
-  if (savedPassword) {
-    navigate("/unlock");
 
-    console.log(savedPassword);
-
-    return <div>{savedPassword} is loggged in</div>;
-  }
   return (
     <form onSubmit={handleSubmit}>
       <div>

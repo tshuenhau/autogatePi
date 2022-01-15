@@ -1,22 +1,23 @@
 import * as api from "../api/index";
 import GlassButton from "../components/glassbutton/GlassButton.js";
 import classes from "./Main.module.css";
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // send a http request to check with server if credentials are valid
 function Main() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const savedPassword = localStorage.getItem("savedPassword");
     axios
       .get("http://116.15.19.109:5152/authentication/isLoggedIn", {
         params: { password: savedPassword },
       })
-      .then(function (response) {
-        console.log(response);
-        console.log(savedPassword.toString());
+      .then((res) => {
+        setIsAuthenticated(res.data);
       });
   }, []);
 
@@ -31,13 +32,26 @@ function Main() {
             </div>
           </div>
           */}
-          <GlassButton
-            label="Unlock"
-            color="green"
-            function={function toggleAdd() {
-              api.instant();
-            }}
-          />
+          {isAuthenticated ? (
+            <GlassButton
+              label="Unlock"
+              color="green"
+              function={function toggleAdd() {
+                api.instant();
+              }}
+            />
+          ) : (
+            <GlassButton
+              label="Login"
+              color="green"
+              function={function login() {
+                setTimeout(() => {
+                  navigate("/login");
+                }, 1500);
+                console.log("login");
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
