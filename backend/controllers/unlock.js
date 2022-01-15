@@ -1,17 +1,17 @@
 import { schedule } from "../static/testdata.js";
 import { addSchedule } from "../static/testdata.js";
 import { Gpio } from "onoff";
-import { unlocked, unlock, lock } from "../static/gatestatus.js";
+import GateStatus from "../static/gatestatus.js";
 
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(18, "low");
 // import arr from "../index";
 export const unlock = (req, res) => {
-  if (unlocked) {
+  if (GateStatus.unlocked) {
     res.send("Server Busy");
     return;
   }
-  unlock();
+  GateStatus.unlock();
   res.send("Unlock");
   console.log("Unlock");
   console.log("Instant Unlock @ " + req.body.time);
@@ -21,6 +21,6 @@ export const unlock = (req, res) => {
 
   setTimeout(() => {
     relay.writeSync(0);
-    lock();
+    GateStatus.lock();
   }, 3000);
 };
