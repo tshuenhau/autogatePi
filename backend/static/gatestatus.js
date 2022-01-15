@@ -1,10 +1,10 @@
 let isUnlocked = false;
 
-function isUnlocked() {
+function setUnlocked() {
   unlocked = true;
 }
 
-function isLock() {
+function setLocked() {
   unlocked = false;
 }
 
