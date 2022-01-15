@@ -8,7 +8,7 @@ const router = express.Router();
 let sql = "SELECT password FROM login WHERE password = ?";
 router.post("/", (req, res) => {
   db.get(sql, JSON.stringify(req.body.password), (err, result) => {
-    console.log("opensesame");
+    console.log(req.body.password.String());
     if (err) {
       return console.error(err.message);
     }
