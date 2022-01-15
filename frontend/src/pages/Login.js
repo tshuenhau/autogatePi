@@ -19,7 +19,7 @@ function Login() {
       //const foundSavedPassword = JSON.parse(previouslySavedPassword);
       setSavedPassword(previouslySavedPassword);
     }
-  }, [savedPassword]);
+  }, [navigate, savedPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

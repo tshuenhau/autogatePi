@@ -1,5 +1,3 @@
-import { schedule } from "../static/testdata.js";
-import { addSchedule } from "../static/testdata.js";
 import { Gpio } from "onoff";
 import { isUnlocked, setUnlocked, setLocked } from "../static/gatestatus.js";
 
@@ -14,9 +12,6 @@ export const unlock = (req, res) => {
   setUnlocked();
   res.send("Unlock");
   console.log("Unlock");
-  console.log("Instant Unlock @ " + req.body.time);
-  addSchedule(req.body.time); // this is for testing purposes for the schedule unlock later on
-  console.log(schedule); // this is for testing purposes for the schedule unlock later on
   relay.writeSync(1);
 
   setTimeout(() => {
