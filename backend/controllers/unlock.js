@@ -6,7 +6,7 @@ import { unlocked, unlock, lock } from "../static/gatestatus.js";
 //const Gpio = require("onoff").Gpio;
 var relay = new Gpio(18, "low");
 // import arr from "../index";
-export const instant = (req, res) => {
+export const unlock = (req, res) => {
   if (unlocked) {
     res.send("Server Busy");
     return;
