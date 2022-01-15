@@ -8,7 +8,7 @@ const router = express.Router();
 let sql = "SELECT password FROM login WHERE password = ?";
 router.post("/", (req, res) => {
   db.get(sql, req.body.password, (err, result) => {
-    console.log(req.body.password);
+    console.log(req.body.password.toString());
     if (err) {
       return console.error(err.message);
     }
