@@ -10,10 +10,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // send the username and password to the server
-    const response = await axios.post(
-      "http://116.15.19.109:5152/login",
-      password
-    );
+    const response = await axios.post("http://116.15.19.109:5152/login", {
+      password: password,
+    });
     // set the state of the user
     setUser(response.data);
     // store the user in localStorage
