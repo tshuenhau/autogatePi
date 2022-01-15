@@ -8,4 +8,4 @@ function setLocked() {
   unlocked = false;
 }
 
-export { unlock, lock, unlocked };
+export { isUnlocked, setUnlocked, setLocked };
