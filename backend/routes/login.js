@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     if (err) {
       return console.error(err.message);
     }
-    return row ? console.log(row.id, row.name) : console.log("No record found");
+    return row ? console.log(row.password) : console.log("No record found");
   });
   res.send("Login Page");
 });
