@@ -16,6 +16,7 @@ function Main() {
       })
       .then(function (response) {
         console.log(response);
+        console.log(savedPassword.toString());
       });
   }, []);
 

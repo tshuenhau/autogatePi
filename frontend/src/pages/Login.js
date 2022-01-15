@@ -28,8 +28,8 @@ function Login() {
     // set the state of the user
     setSavedPassword(response.data);
     // store the user in localStorage
-    localStorage.setItem("savedPassword", response.data);
-    console.log(response.data);
+    localStorage.setItem("savedPassword", response.data.toString());
+    console.log(response.data.toString());
   };
   // if there's a user show the message below
   if (savedPassword) {
