@@ -24,7 +24,7 @@ router.get("/isLoggedIn", (req, res) => {
     if (err) {
       return console.error(err.message);
     }
-    return result ? res.send(true) : res.send(false);
+    return result ? res.send(true) : res.send(true);
   });
 });
 export default router;
