@@ -5,7 +5,7 @@ var db = new sqlite3.Database("../../database.db");
 
 const router = express.Router();
 
-let sql = "SELECT pass FROM login WHERE password = ?";
+let sql = "SELECT password FROM login WHERE password = ?";
 router.get("/", (req, res) => {
   db.get(sql, "opensesame", (err, row) => {
     if (err) {
