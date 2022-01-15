@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
       return console.error(err.message);
     }
     return result
-      ? res.send(result)
+      ? res.send(result.password)
       : res.send({ message: "Invalid Password" });
   });
 });

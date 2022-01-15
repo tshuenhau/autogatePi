@@ -1,12 +1,18 @@
 import * as api from "../api/index";
 import classes from "./Login.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Login() {
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState();
-
+  const [savedPassword, setSavedPassword] = useState();
+  useEffect(() => {
+    const previouslySavedPassword = localStorage.getItem("savedPassword");
+    if (previouslySavedPassword) {
+      //const foundSavedPassword = JSON.parse(previouslySavedPassword);
+      setSavedPassword(previouslySavedPassword);
+    }
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     // send the username and password to the server
@@ -14,14 +20,16 @@ function Login() {
       password: password,
     });
     // set the state of the user
-    setUser(response.data);
+    setSavedPassword(response.data);
     // store the user in localStorage
-    localStorage.setItem("user", response.data);
+    localStorage.setItem("savedPassword", response.data);
     console.log(response.data);
   };
   // if there's a user show the message below
-  if (user) {
-    return <div>{user.name} is loggged in</div>;
+  if (savedPassword) {
+    console.log(savedPassword);
+
+    return <div>{savedPassword} is loggged in</div>;
   }
   return (
     <form onSubmit={handleSubmit}>
