@@ -86,6 +86,7 @@
   transition: all 0.3s ease-out;
   pointer-events: none;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
