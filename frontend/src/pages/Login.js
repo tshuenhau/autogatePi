@@ -11,20 +11,42 @@ function Login() {
   const [password, setPassword] = useState("");
   const [savedPassword, setSavedPassword] = useState();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   useEffect(() => {
+    let isMounted = true;
     const previouslySavedPassword = localStorage.getItem("savedPassword");
     if (previouslySavedPassword) {
       api.checkAuth().then((res) => {
-        setIsAuthenticated(res);
-        console.log(res);
+        if (isMounted) {
+          setIsAuthenticated(res);
+          console.log(res);
+        }
       });
     }
     if (isAuthenticated) {
       navigate("/");
       console.log(savedPassword);
     }
+    return () => {
+      isMounted = false;
+    };
   }, [isAuthenticated, navigate, savedPassword]);
+
+  // useEffect(() => {
+  //   let isMonunted = true;
+  //   const previouslySavedPassword = localStorage.getItem("savedPassword");
+  //   if (previouslySavedPassword) {
+  //     api.checkAuth().then((res) => {
+  //       if (isMonunted) {
+  //         setIsAuthenticated(res);
+  //         console.log(res);
+  //       }
+  //     });
+  //   }
+  //   if (isAuthenticated) {
+  //     navigate("/");
+  //     console.log(savedPassword);
+  //   }
+  // }, [isAuthenticated, navigate, savedPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

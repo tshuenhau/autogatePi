@@ -1,7 +1,6 @@
 import * as api from "../api/index";
 import GlassButton from "../components/glassbutton/GlassButton.js";
 import classes from "./Main.module.css";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
