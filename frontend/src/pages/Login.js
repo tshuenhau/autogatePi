@@ -58,11 +58,12 @@ function Login() {
       }
     );
     // set the state of the user
-
-    setSavedPassword(response.data);
+    setTimeout(() => {
+      setSavedPassword(response.data);
+      localStorage.setItem("savedPassword", response.data.toString());
+      console.log(response.data.toString());
+    }, 150);
     // store the user in localStorage
-    localStorage.setItem("savedPassword", response.data.toString());
-    console.log(response.data.toString());
   };
 
   return (
