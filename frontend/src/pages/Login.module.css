@@ -27,28 +27,26 @@
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0);
     background: transparent;
     border: none;
-    transform: translate(-50%, -50%);
     height: 20%;
-    width: 0;
+    width: 20;
   }
   40% {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
     background: transparent;
-
     border: none;
-    transform: translate(-50%, -50%);
     height: 20%;
-    width: 0;
+    width: 20%;
   }
   85% {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0);
+    border-top: none;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
     background: transparent;
   }
 
   100% {
-    transform: translate(-50%, -50%);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.35);
     background: var(--glass);
+    border: var(--glassborder);
 
     height: 100%;
     width: 100%;
