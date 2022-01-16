@@ -3,23 +3,28 @@ import classes from "./Login.module.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock } from "@fortawesome/fontawesome-free-solid";
 
 function Login() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [savedPassword, setSavedPassword] = useState();
-  useEffect(() => {
-    if (savedPassword) {
-      navigate("/");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-      console.log(savedPassword);
-    }
+  useEffect(() => {
     const previouslySavedPassword = localStorage.getItem("savedPassword");
     if (previouslySavedPassword) {
-      //const foundSavedPassword = JSON.parse(previouslySavedPassword);
-      setSavedPassword(previouslySavedPassword);
+      api.checkAuth().then((res) => {
+        setIsAuthenticated(res);
+        console.log(res);
+      });
     }
-  }, [navigate, savedPassword]);
+    if (isAuthenticated) {
+      navigate("/");
+      console.log(savedPassword);
+    }
+  }, [isAuthenticated, navigate, savedPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,6 +36,7 @@ function Login() {
       }
     );
     // set the state of the user
+
     setSavedPassword(response.data);
     // store the user in localStorage
     localStorage.setItem("savedPassword", response.data.toString());
@@ -38,17 +44,25 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="password">password: </label>
-        <input
-          type="password"
-          value={password}
-          placeholder="enter a password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
+    <form onSubmit={handleSubmit} className={classes.glasspanel}>
+      <h1 className={classes.title}>Login</h1>
+      <div className={classes.content}>
+        <div className={classes.field}>
+          <input
+            className={classes.input}
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={({ target }) => setPassword(target.value)}
+          />
+          <div className={classes.iconbox}>
+            <FontAwesomeIcon icon={faLock} size="lg" />
+          </div>
+        </div>
+        <button type="submit" className={classes.loginbutton}>
+          Login
+        </button>
       </div>
-      <button type="submit">Login</button>
     </form>
   );
 }
