@@ -86,13 +86,26 @@
   transition: all 0.3s ease-out;
   pointer-events: none;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  transition: background-color 5000s ease-in-out 0s;
+}
 ::-webkit-input-placeholder {
   color: #ffffffa8;
   font-family: "Open Sans";
 }
 
-.form input[type="text"],
-input[type="password"] {
+.input {
+  user-select: none;
   font-family: "Open Sans", Calibri, Arial, sans-serif;
   font-size: 1.5em;
   font-weight: 400;
@@ -108,6 +121,7 @@ input[type="password"] {
   transition: color 0.3s ease-out;
   width: 100%;
 }
+
 .loginbutton {
   margin-top: 15px;
   text-align: center;
@@ -128,4 +142,9 @@ input[type="password"] {
   border: none;
 
   margin-bottom: 20px;
+}
+
+.loginbutton:active {
+  letter-spacing: 0.5vh;
+  transition-delay: 0s;
 }
