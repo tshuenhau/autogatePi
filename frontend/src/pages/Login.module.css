@@ -75,14 +75,12 @@
     width: 0%;
     overflow: visible;
     margin: 0;
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
 
   50% {
     margin: 0;
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -91,7 +89,6 @@
 
   80% {
     margin: 0;
-    position: absolute;
     top: 0%;
     transform: translateY(0%);
 
