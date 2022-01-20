@@ -30,6 +30,7 @@
     height: 20%;
     width: 20;
   }
+
   40% {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
     background: transparent;
@@ -79,12 +80,13 @@
 @keyframes fullThenSmall {
   0% {
     width: 0%;
-    margin-top: 50%;
+    margin-top: 25%;
     overflow: visible;
   }
-  30% {
+
+  50% {
     width: 100%;
-    margin-top: 50%;
+    margin-top: 25%;
 
     overflow: visible;
   }
