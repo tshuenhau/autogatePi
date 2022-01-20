@@ -36,7 +36,7 @@ function Main() {
           */}
           {isAuthenticated ? (
             <GlassButton
-              label="Unlock"
+              label="Open"
               color="green"
               function={function toggleAdd() {
                 api.instant();
