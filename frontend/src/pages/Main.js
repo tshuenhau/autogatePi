@@ -49,7 +49,7 @@ function Main() {
               function={function login() {
                 setTimeout(() => {
                   navigate("/login");
-                }, 1500);
+                }, 1850);
                 console.log("login");
               }}
             />
