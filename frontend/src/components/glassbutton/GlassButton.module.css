@@ -28,7 +28,7 @@
   border-radius: 40px;
   color: rgb(212, 212, 212);
   z-index: 3;
-  font-size: calc(12px + 1.25vh);
+  font-size: calc(15px + 0.75vh);
   font-weight: 600;
   letter-spacing: 1px;
   text-emphasis: none;
