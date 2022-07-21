@@ -44,12 +44,14 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+
 .glassbuttonactive {
   outline: 0;
-
   position: relative;
   width: 20vh;
   height: 6vh;
+  min-width: 150px;
+  min-height: 50px;
   display: inline-block;
   transition: var(--expand-duration);
 }
