@@ -1,5 +1,5 @@
 import express from "express";
-import { unlock } from "../controllers/unlock.js";
+import { unlock, unlockbackup } from "../controllers/unlock.js";
 
 const router = express.Router();
 let unlocked = false;
