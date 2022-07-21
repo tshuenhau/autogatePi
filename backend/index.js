@@ -12,6 +12,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/unlock", unlock);
+
+app.use("/unlockbackup", unlockbackup);
+
 app.use("/authentication", authentication);
 
 const PORT = process.env.PORT || 5000;
