@@ -47,7 +47,7 @@ function Main() {
                 label="Backup"
                 color="green"
                 function={function toggleAdd() {
-                  api.instant();
+                  api.backup();
                 }}
               />
             </div>
