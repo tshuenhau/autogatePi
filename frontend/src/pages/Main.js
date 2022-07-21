@@ -27,15 +27,8 @@ function Main() {
     <div className={classes.main}>
       <div className={classes.center}>
         <div className={classes.column}>
-          {/*
-          <div className={classes.titlepanel}>
-            <div className={classes.title}>
-              lasciate ogne speranza, voi ch'intrate.{" "}
-            </div>
-          </div>
-          */}
           {isAuthenticated ? (
-            <div>
+            <div className={classes.buttonsection}>
               <GlassButton
                 label="Open"
                 color="green"
@@ -43,13 +36,22 @@ function Main() {
                   api.instant();
                 }}
               />
-              <GlassButton
-                label="Backup"
-                color="orange"
-                function={function toggleAdd() {
-                  api.backup();
-                }}
-              />
+              <div
+                className={[classes.column, classes.backupsection].join(" ")}
+              >
+                <div className={classes.backuptext}>
+                  Not Working? <br></br> Try this instead.
+                </div>
+                <div className={classes.backup}>
+                  <GlassButton
+                    label="Open2"
+                    color="orange"
+                    function={function toggleAdd() {
+                      api.backup();
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           ) : (
             <GlassButton
