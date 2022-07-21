@@ -2,7 +2,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import { unlock, unlockbackup } from "./routes/unlock.js";
+import unlock from "./routes/unlock.js";
+import unlockbackup from "./routes/unlock.js";
+
 import authentication from "./routes/authentication.js";
 
 const app = express();
