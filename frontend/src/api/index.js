@@ -14,6 +14,18 @@ export const instant = () =>
       console.log(res);
     });
 
+export const backup = () =>
+  axios
+    .post(url + "/unlock/backup", {
+      time: new Date(Date.now()).toLocaleString("en-UK", {
+        // can change to en-US
+        timeZone: "Singapore",
+      }),
+    })
+    .then(function (res) {
+      console.log(res);
+    });
+
 export const checkAuth = () => {
   const savedPassword = localStorage.getItem("savedPassword");
   return axios

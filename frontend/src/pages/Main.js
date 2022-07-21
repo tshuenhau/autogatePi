@@ -35,13 +35,22 @@ function Main() {
           </div>
           */}
           {isAuthenticated ? (
-            <GlassButton
-              label="Open"
-              color="green"
-              function={function toggleAdd() {
-                api.instant();
-              }}
-            />
+            <div>
+              <GlassButton
+                label="Open"
+                color="green"
+                function={function toggleAdd() {
+                  api.instant();
+                }}
+              />
+              <GlassButton
+                label="Backup"
+                color="green"
+                function={function toggleAdd() {
+                  api.instant();
+                }}
+              />
+            </div>
           ) : (
             <GlassButton
               label="Login"

@@ -9,5 +9,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/instant", unlock);
+router.post("/backup", unlockbackup);
 
 export default router;
