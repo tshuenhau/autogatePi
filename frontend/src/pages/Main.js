@@ -10,14 +10,6 @@ function Main() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
-    //   const savedPassword = localStorage.getItem("savedPassword");
-    //   axios
-    //     .get("http://116.15.19.109:5152/authentication/isLoggedIn", {
-    //       params: { password: savedPassword },
-    //     })
-    //     .then((res) => {
-    //       setIsAuthenticated(res.data);
-    //     });
     api.checkAuth().then((res) => {
       setIsAuthenticated(res);
     });
