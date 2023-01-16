@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:5000";
+const url = "http://192.186.1.19:5152";
 
 export const instant = () =>
   axios
