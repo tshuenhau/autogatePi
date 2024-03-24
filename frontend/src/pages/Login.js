@@ -52,7 +52,7 @@ function Login() {
     e.preventDefault();
     // send the username and password to the server
     const response = await axios.post(
-      "http://116.15.116.109:5152/authentication/login",
+      "http://XXX.XX.XXX.XXXX:5152/authentication/login",
       {
         password: password,
       }
