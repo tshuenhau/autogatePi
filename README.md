@@ -40,6 +40,3 @@ This project, born from personal inconvenience, has not only resolved the initia
 
 By employing a React frontend and Node.js backend, this project stands as a testament to the power of modern web technologies to solve everyday problems in innovative ways. Looking forward, I envision a world where such integrations are commonplace, addressing our daily inconveniences with smart, innovative solutions.
 
----
-
-Copyright © tshuenhau 2020
